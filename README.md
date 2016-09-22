@@ -15,8 +15,7 @@ To install the notes service:
     $ pip install -r requirements.txt
 
 To start the notes service (in the foreground):  
-    $ cd notes-service
-    $ source bin/activate && FLASK_APP=recipe-notes-service.py flask run --host=0.0.0.0
+    $ cd notes-service && source bin/activate && python notes_service.py
 
 *Chrome Extension*
 This is an extension to be installed in the Chrome browser that alters the behavior of AllRecipies.com to
