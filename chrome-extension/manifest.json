@@ -2,7 +2,6 @@
 	"name": "All Recipies Recipe Notes",
 	"version": "0.01",
 	"permissions": [
-		"activeTab",
 		"http://ubu:5000/"
 	],
 	"content_scripts": [
@@ -14,9 +13,6 @@
 	"web_accessible_resources": [
 		"images/edit_32x32.png"
 	],
-	"browser_action": {
-		"default_title": "All Recipies Recipe Notes"
-	},
 	"background": {
 		"scripts": ["js/background.js"],
 		"persistent": false
