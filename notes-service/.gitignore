@@ -5,4 +5,4 @@ include
 lib
 local
 pip-selfcheck.json
-recipe-notes.db
+*.db
