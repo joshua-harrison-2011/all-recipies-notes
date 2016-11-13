@@ -36,6 +36,13 @@ stdout_logfile=<project root>/log/notes-service.stdout.log
 stderr_logfile=<project root>/log/notes-service.stderr.log
 ```
 
+Then stop and start with:  
+```bash
+sudo supervisorctl stop notes-service
+sudo supervisorctl restart notes-service
+sudo supervisorctl start notes-service
+```
+
 #### Chrome Extension  
 This is an extension to be installed in the Chrome browser that alters the behavior of AllRecipies.com to
 add the add/edit notes ability.  
