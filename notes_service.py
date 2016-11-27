@@ -1,6 +1,6 @@
 import json, os, pickledb, logging, argparse
 from logging.handlers import RotatingFileHandler
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template, Markup
 
 app = Flask(__name__)
 app.config.update(dict(
@@ -50,6 +50,16 @@ def note_handler(recipe_id):
 
 	db.dump()
 	return response
+
+@app.route('/browser-plugin', methods=['GET'])
+def browser_plugin_handler():
+	host, port = request.host.split(':');
+
+	# request.headers["User-Agent"]: curl/7.35.0
+	if request.headers["User-Agent"].find("curl/") == 0:
+            return render_template('tampermonkey.js', host=host, port=port)
+        else:
+            return render_template('tampermonkey.html', host=host, port=port)
 
 if __name__ == '__main__':
 	# Command line options: http://flask.pocoo.org/snippets/133/
